@@ -7,7 +7,8 @@
 .container {
   width: 100%;
   height: 100vh;
-  background: linear-gradient(130deg, #153677, #4e085f);
+  /* background: linear-gradient(130deg, #153677, #4e085f); */
+  background: url(/images/todobg.png)no-repeat center center/cover;
   padding: 10px;
 }
 .todo-app {
@@ -25,6 +26,7 @@
   margin-bottom: 20px;
   text-align: center;
   align-items: center;
+  justify-content: center;
   display: flex;
 }
 .todo-app h1 img {
@@ -72,6 +74,7 @@ ul li {
   border-radius: 30px;
   /* background: #edeef0; */
   position: relative;
+    cursor: pointer;
 }
 ul li::before {
   content: "";
@@ -93,7 +96,7 @@ ul li.checked::before {
     display: inline-block;
     margin-right: 10px;
     background-position: center;
-    
+
 }
 ul li span {
 position: absolute;
@@ -111,3 +114,41 @@ border-radius: 50%;
 ul li span:hover {
 background: #edeef0;
 }
+
+footer {
+    position: sticky;
+    bottom: 0;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    padding: 10px 20px;
+    background: rgb(87, 76, 114);
+    color: #fff;
+    font-size: 15px;
+    align-items: center;
+    
+}
+.footer{
+    display: flex;
+    align-items: center;
+    width: 100%;
+}
+.social{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-left: 20px;
+}
+.connection{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-left: 20px;
+
+}
+.fa{
+    font-size: 20px;
+    margin: 0 10px;
+    cursor: pointer;
+}
+
