@@ -1,17 +1,35 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="style.css">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="style.css" />
     <script src="/script.js"></script>
     <title>Todo App</title>
-</head>
-<body>
+  </head>
+  <body>
     <div class="container">
-<div class="todo-app">
-    <h1>To-Do List <img src="images/icon.png" alt=""></h1>
-</div>
+      <div class="todo-app">
+        <h1>To-Do List <img src="images/icon.png" alt="" /></h1>
+        <div class="row">
+          <input type="text" id="input-boc" placeholder="Add a new task" />
+          <button id="add">Add</button>
+        </div>
+        <ul id="list-container">
+            <!-- <li class="completed">
+                <span class="checked">Task 1</span>
+                <button class="delete">Delete</button>
+            </li>
+            <li>
+                <span>Task 2</span>
+                <button class="delete">Delete</button>
+            </li>
+            <li>
+                <span>Task 3</span>
+                <button class="delete">Delete</button>
+            </li> -->
+        </ul>
+      </div>
     </div>
-</body>
+  </body>
 </html>
