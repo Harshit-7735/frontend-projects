@@ -67,10 +67,10 @@ ul li {
   margin-bottom: 10px;
   display: flex;
   align-items: center;
-  justify-content: space-between;
+  /* justify-content: space-between; */
   padding: 10px 20px;
   border-radius: 30px;
-  background: #edeef0;
+  /* background: #edeef0; */
   position: relative;
 }
 ul li::before {
@@ -83,14 +83,31 @@ ul li::before {
   margin-right: 10px;
   background-position: center;
 }
-ul li.completed::before {
+ul li.checked{
+    color: #555;
+    text-decoration: line-through;
+}
+ul li.checked::before {
   background: url(/images/checked.png);
-  background-size: cover;
-  background-position: center;
+    background-size: cover;
+    display: inline-block;
+    margin-right: 10px;
+    background-position: center;
+    
 }
-
-ul li span.checked {
-  text-decoration: line-through;
-  color: #555;
+ul li span {
+position: absolute;
+right: 0;
+top: 5px;
+width: 40px;
+height: 40px;
+cursor: pointer;
+font-size: 22px;
+color: #555;
+line-height: 40px;
+text-align: center;
+border-radius: 50%;
 }
-
+ul li span:hover {
+background: #edeef0;
+}
