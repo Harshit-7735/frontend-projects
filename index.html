@@ -4,7 +4,7 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="stylesheet" href="style.css" />
-    <script src="/script.js"></script>
+    <script src="script.js" defer></script>
     <title>Todo App</title>
   </head>
   <body>
@@ -12,22 +12,13 @@
       <div class="todo-app">
         <h1>To-Do List <img src="images/icon.png" alt="" /></h1>
         <div class="row">
-          <input type="text" id="input-boc" placeholder="Add a new task" />
-          <button id="add">Add</button>
+          <input type="text" id="input-box" placeholder="Add a new task" />
+          <button id="add" onclick="Addtask()">Add</button>
         </div>
         <ul id="list-container">
-            <!-- <li class="completed">
-                <span class="checked">Task 1</span>
-                <button class="delete">Delete</button>
-            </li>
-            <li>
-                <span>Task 2</span>
-                <button class="delete">Delete</button>
-            </li>
-            <li>
-                <span>Task 3</span>
-                <button class="delete">Delete</button>
-            </li> -->
+            <!-- <li class="checked">Task 1</li>
+            <li>Task 2</li>
+            <li>Task 3</li> -->
         </ul>
       </div>
     </div>
