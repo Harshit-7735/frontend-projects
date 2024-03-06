@@ -53,11 +53,14 @@ body{
   transition: all 0.3s ease;
   text-align: left;
 }
-.btn:hover{
+.btn:hover:not(:disabled){
   transform: scale(0.98);
 background: #093884
 }
-#next-btn{
+.btn:disabled{
+  cursor:no-drop;
+}
+#Next-button{
   background: #093884;
   color: #fff;
   font-weight: 500;
@@ -71,3 +74,12 @@ background: #093884
   display: none;
 }
 
+.correct{
+  background-color: #2d774d;
+  color: #fff;
+}
+.wrong{
+  background-color: #923c3c;
+  color: #fff;
+}
+  

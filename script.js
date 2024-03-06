@@ -68,47 +68,96 @@ const questions = [
         {text: 'Chhangani Kachori Wala', correct: true}
     ],
  },
-
- {
-    question: "What comes once in a minute, twice in a moment, but never in a thousand years?",
-    answers: [
-        {text: 'M', correct: false},
-        {text: 'N', correct: false},
-        {text: 'O', correct: true},
-        {text: 'P', correct: false}
-    ],
- }
 ]
 
 
-const questionElement = document.getElementById('question')
-const answerButtonsElement = document.getElementById('answer-buttons')
-const nextButton = document.getElementById('next-btn')
-
+const questionElement = document.getElementById('question');
+const answerButtonsElement = document.getElementById('answer-buttons');
+const nextButton = document.getElementById('Next-button');
 let currentQuestionIndex = 0
 let score = 0
-
+// to start the quiz
 function startQuiz(){
     currentQuestionIndex = 0;
     score = 0;
     nextButton.innerHTML = "Next";
     showQuestion();
 }
-
+// to show the question
 function showQuestion(){
     resetState();
-    showQuestion(questions[currentQuestionIndex]);
-    let questionNo = currentQuestionIndex + 1;
-    questionElement.innerHTML= questionNo + ". " + currentQuestion.question;
+    let currentQuestion = questions[currentQuestionIndex];
+    let questionNo= currentQuestionIndex + 1;
+    questionElement.innerHTML = questionNo + ". " + currentQuestion.question;
 
-    currentQuestion.answers.forEach(answers => {
+    // to show the answers
+    currentQuestion.answers.forEach(answer => {
         const button = document.createElement('button');
-        button.innerText = answers.text;
+        button.innerText = answer.text;
         button.classList.add('btn');
         answerButtonsElement.appendChild(button);
-        if(answers.correct){
-            button.dataset.correct = answers.correct;
+        if(answer.correct){
+            button.dataset.correct = answer.correct;
         }
-        
-    });
+        button.addEventListener('click', selectAnswer);
+    })
 }
+// Reset the state of the quiz to show the next question
+function resetState(){
+    nextButton.style.display = 'none';
+    while(answerButtonsElement.firstChild){
+        answerButtonsElement.removeChild(answerButtonsElement.firstChild);
+    }
+}
+// select the answer and check if it is correct or not and display the next button
+function selectAnswer(e){
+    const selectedButton = e.target;
+    const correct = selectedButton.dataset.correct === 'true';
+    if(correct){
+selectedButton.classList.add('correct');
+score++;  
+    }
+    else{
+        selectedButton.classList.add('wrong');
+    }
+    Array.from(answerButtonsElement.children).forEach(button => {
+        if(button.dataset.correct === 'true'){
+            button.classList.add('correct');
+        }
+    button.disabled = true;
+    });
+    // display next button
+    nextButton.style.display = 'block';
+}
+
+// show the score after the quiz is over and display the restart button to start the quiz again
+function showScore(){
+  resetState();
+    questionElement.innerHTML = "Your Score is " + score + " out of " + questions.length;
+    nextButton.innerHTML = 'Restart';
+    currentQuestionIndex = 0;
+    score = 0;
+    nextButton.style.display = 'block';
+}
+// handle the next button to show the next question
+function handleNext(){
+    currentQuestionIndex++;
+    if(currentQuestionIndex < questions.length){
+        showQuestion();
+    }
+    else{
+       showScore();
+    }
+}
+// event listener for the next button
+nextButton.addEventListener('click', () => {
+    if(nextButton.innerHTML === 'Next'){
+        handleNext();
+    }
+    else{
+        startQuiz()
+    }
+})
+// function to start the quiz
+startQuiz();
+
