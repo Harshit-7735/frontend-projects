@@ -1,85 +1,111 @@
-*{
+* {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
-  font-family: poppins , sans-serif;
+  font-family: "Poppins", sans-serif;
 }
-body{
-  background:url(/images/quizbg.png) no-repeat center center/cover;
-  height: 100vh;
-  
-}
-.app{
-  background-color: rgb(225, 228, 231);
-  width: 90%;
-  max-width: 600px;
-  margin: 100px auto 0;
-  border-radius: 10px;
-  padding: 30px;
-}
-.app h1{
-  font-size: 40px;
-  font-family:'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
-  color: #001e4d;
-  font-weight: 600;
-  text-align: center;
-  border-bottom: 1px solid #001e4d;
-  padding-bottom: 20px;
- 
-}
-.quiz-box
-{
-  padding: 20px 0; 
-}
-.quiz-box h2{
-  font-size: 20px;
-  color: #001e4d;
-  font-weight: 600;
-  margin-bottom: 10px;
-}
-
-.btn{
-  display: block;
+.container {
   width: 100%;
-  padding: 10px;
-  margin: 20px 0;
-  border: none;
-  background-color: #001e4d;
+  height: 100vh;
+  background: url(/images/background.png);
+  background-size: cover;
+  background-size: cover;
+  padding:0px 20px;
   color: #fff;
-  font-size: 18px;
-  font-weight: 600;
+}
+nav {
+  width: 100%;
+  padding: 20px 20px;
+  display: flex;
+  align-self: center;
+ box-shadow: 0 5px 15px rgba(0, 0, 0, 0.4);
+}
+.logo {
+  width: 50px;
   cursor: pointer;
-  border-radius: 5px;
-  transition: all 0.3s ease;
-  text-align: left;
 }
-.btn:hover:not(:disabled){
-  transform: scale(0.98);
-background: #093884
+nav ul {
+  flex: 1;
 }
-.btn:disabled{
-  cursor:no-drop;
+nav ul li {
+  list-style: none;
+  display: inline-block;
+  margin: 10px 20px;
 }
-#Next-button{
-  background: #093884;
+nav ul li a {
+  text-decoration: none;
   color: #fff;
-  font-weight: 500;
-  font-size: 18px;
-  width: 100px;
-  border: 0 ;
-  padding: 10px;
-  margin: 20px auto 0;
-  border-radius: 5px;
-  cursor: pointer;
-  display: none;
+}
+nav ul li a:hover {
+  color: #ff960b;
+
+}
+nav .btn {
+  color: #fff;
+  text-decoration: none;
+  border: 1px solid #fff;
+  padding: 20px 30px;
+  border-radius: 50px;
+  transition: 0.5s;
+}
+nav .btn:hover {
+  background: #fff;
+  color: #000;
+}
+.content
+{
+  margin-top: 10%;
+}
+.content h1 {
+  font-size: 80px;
+  margin-bottom: 20px;
+}
+.content h1 span{
+  color: #ff960b;
 }
 
-.correct{
-  background-color: #2d774d;
-  color: #fff;
+.content p {
+line-height: 22px;
+font-size: 20px;
 }
-.wrong{
-  background-color: #923c3c;
-  color: #fff;
+
+.content .btn {
+  display: inline-block;
+margin-top: 30px;
+background: #ff960b;
+color: #fff;
+text-decoration: none;
+padding: 15px 30px;
+border-radius: 30px;
 }
-  
+.coinlist{
+  display: flex;
+  position: absolute;
+  right: 10%;
+  bottom: 50px;
+  align-items: center;
+}
+.coinlist img{
+  width: 50px;
+  margin: 0 10px;
+}
+.coinlist img:hover{
+  transform: scale(1.1);
+  transition: 0.5s;
+}
+
+.coin{
+  display: flex;
+align-items: center;
+font-size: 14px;
+margin: 0 15px;
+border: 1px solid #fff;
+padding: 10px 30px;
+border-radius: 8px;
+color: #ff960b;
+}
+.coin h3{
+  color: #fff;
+  margin-bottom: 5px;
+  text-decoration: underline #ff960b 1px;
+}
